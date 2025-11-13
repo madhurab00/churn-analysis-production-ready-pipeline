@@ -1,7 +1,0 @@
-artifact_location: file:///media/madhura/New Volume/zuucrew/mini_project_00/Production
-  ready pipeline/pyspark/mlruns/100490761865804508
-creation_time: 1761061334165
-experiment_id: '100490761865804508'
-last_update_time: 1761061334165
-lifecycle_stage: active
-name: Churn Analysis Using PySpark

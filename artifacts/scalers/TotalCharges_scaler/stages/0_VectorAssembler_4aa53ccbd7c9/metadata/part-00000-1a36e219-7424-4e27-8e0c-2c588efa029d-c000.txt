@@ -1,1 +1,0 @@
-{"class":"org.apache.spark.ml.feature.VectorAssembler","timestamp":1761499617608,"sparkVersion":"4.0.1","uid":"VectorAssembler_4aa53ccbd7c9","paramMap":{"inputCols":["TotalCharges"],"outputCol":"TotalCharges_vec"},"defaultParamMap":{"handleInvalid":"error","outputCol":"VectorAssembler_4aa53ccbd7c9__output"}}

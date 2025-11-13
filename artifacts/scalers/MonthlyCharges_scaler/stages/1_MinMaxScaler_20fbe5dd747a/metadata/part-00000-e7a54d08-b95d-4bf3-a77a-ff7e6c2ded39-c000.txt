@@ -1,1 +1,0 @@
-{"class":"org.apache.spark.ml.feature.MinMaxScalerModel","timestamp":1761499615591,"sparkVersion":"4.0.1","uid":"MinMaxScaler_20fbe5dd747a","paramMap":{"outputCol":"MonthlyCharges_scaled_vec","inputCol":"MonthlyCharges_vec"},"defaultParamMap":{"min":0.0,"outputCol":"MinMaxScaler_20fbe5dd747a__output","max":1.0}}

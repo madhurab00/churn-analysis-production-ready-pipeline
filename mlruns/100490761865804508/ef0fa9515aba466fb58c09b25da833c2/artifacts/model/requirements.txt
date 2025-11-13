@@ -1,4 +1,0 @@
-mlflow==3.5.0
-numpy==2.3.4
-pyspark==4.0.1
-scipy==1.16.2
