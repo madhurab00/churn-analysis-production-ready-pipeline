@@ -1,0 +1,20 @@
+aliases: []
+creation_timestamp: 1761487061271
+current_stage: None
+deployment_job_state: null
+description: null
+last_updated_timestamp: 1761487061271
+metrics: null
+model_id: null
+name: churn_prediction
+params: null
+run_id: 2e41d36a5f504173a25a070b40dd5a17
+run_link: null
+source: file:///media/madhura/New Volume/zuucrew/mini_project_00/Production ready
+  pipeline/pyspark/mlruns/100490761865804508/2e41d36a5f504173a25a070b40dd5a17/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///media/madhura/New Volume/zuucrew/mini_project_00/Production
+  ready pipeline/pyspark/mlruns/100490761865804508/2e41d36a5f504173a25a070b40dd5a17/artifacts/model
+user_id: null
+version: 13

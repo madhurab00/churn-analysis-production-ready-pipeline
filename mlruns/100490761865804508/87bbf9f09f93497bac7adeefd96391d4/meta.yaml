@@ -1,0 +1,15 @@
+artifact_uri: file:///media/madhura/New Volume/zuucrew/mini_project_00/Production
+  ready pipeline/pyspark/mlruns/100490761865804508/87bbf9f09f93497bac7adeefd96391d4/artifacts
+end_time: 1761499851708
+entry_point_name: ''
+experiment_id: '100490761865804508'
+lifecycle_stage: active
+run_id: 87bbf9f09f93497bac7adeefd96391d4
+run_name: training pipeline | 2025-10-26 22:57:10
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761499630831
+status: 3
+tags: []
+user_id: madhura

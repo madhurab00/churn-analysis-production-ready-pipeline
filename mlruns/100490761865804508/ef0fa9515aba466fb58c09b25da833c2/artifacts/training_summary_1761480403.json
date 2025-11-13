@@ -1,0 +1,13 @@
+{
+  "model_type": "RandomForest",
+  "training_samples": 5698,
+  "test_samples": 1345,
+  "features_used": 19,
+  "training_time_seconds": 71.70931959152222,
+  "evaluation": {
+    "accuracy": 0.9598513011152416,
+    "f1_score": 0.9603666468252408,
+    "precision": 0.9614396226120736,
+    "recall": 0.9598513011152416
+  }
+}

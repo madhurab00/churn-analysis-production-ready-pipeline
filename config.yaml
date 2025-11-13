@@ -1,0 +1,160 @@
+data_paths:
+  raw_data: "data/raw/ChurnModelling.csv"
+  processed_data: "data/processed/ChurnModelling_Missing_Values_Handled.csv"
+  imputed_data: "data/processed/imputed.csv"
+  processed_dir: "data/processed"
+  artifacts_dir: "artifacts"
+  data_artifacts_dir: "artifacts/data"
+  model_artifacts_dir: "artifacts/models"
+  train: "artifacts/data/train.csv"
+  test: "artifacts/data/test.csv"
+
+
+
+columns:
+  target: "Churn"
+  drop_columns: ["customerID"]
+  nominal_columns: ['gender','SeniorCitizen','MultipleLines', 'InternetService',
+       'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport',
+       'StreamingTV', 'StreamingMovies', 'Contract','PaymentMethod',"PhoneService",
+       "PaperlessBilling","Partner","Dependents","Churn"]
+  numeric_columns: ['tenure','MonthlyCharges','TotalCharges']
+  binning_column: "tenure"
+  scaling_columns: ['MonthlyCharges','TotalCharges']
+  feature_columns:
+  - "gender"
+  - "SeniorCitizen"
+  - "Partner"
+  - "Dependents"
+  - "tenure"
+  - "PhoneService"
+  - "MultipleLines"
+  - "InternetService"
+  - "OnlineSecurity"
+  - "OnlineBackup"
+  - "DeviceProtection"
+  - "TechSupport"
+  - "StreamingTV"
+  - "StreamingMovies"
+  - "Contract"
+  - "PaperlessBilling"
+  - "PaymentMethod"
+  - "MonthlyCharges"
+  - "TotalCharges"
+
+missing_values:
+  strategy: "fill"
+  methods:
+    totalcharges:
+      strategy: "fill"
+      method: "mean"
+      relevant_column: "TotalCharges"
+
+outlier_detection:
+  detection_method: "iqr"
+  handling_method: "remove"
+  z_score_threshold: 3.0
+
+feature_binning:
+  tenure_bins:
+    New: [0,20]
+    Establishing: [20, 40]
+    Loyal: [40, 100]
+
+feature_encoding:
+  nominal_columns: [
+       'MultipleLines', 'InternetService','gender',"PaperlessBilling",
+       'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport',
+       'StreamingTV', 'StreamingMovies', 'Contract','PhoneService',
+       'PaymentMethod',"Partner","Dependents","Churn"]
+
+  ordinal_mappings:
+    tenureBins:
+      New: 3
+      Establishing: 2
+      Loyal: 1
+
+feature_scaling:
+  scaling_type: "standard"
+  columns_to_scale: ['MonthlyCharges','TotalCharges']
+
+data_splitting:
+  split_type: "simple"
+  test_size: 0.2
+  random_state: 42
+  n_splits: 6
+
+training:
+  default_model_type: "random_forest"
+  default_training_strategy: "cv"
+  cv_folds: 6
+  random_state: 42
+  test_size: 0.2
+  max_iterations: 1000
+  hyperparameter_tuning:
+    enabled: false
+    search_method: "grid"
+    cv_folds: 6
+    n_iter: 20
+
+model:
+  model_type: "random_forest"
+  training_strategy: "cv"
+  data_path: "data/raw/churndataset.csv"
+  model_path: "artifacts/models/churn_rf_model"
+  evaluation_path: "artifacts/evaluation/random_forest_cv_evaluation_report.txt"
+  model_params:
+    'numTrees': 200
+    'maxDepth': 20
+    'seed': 42
+
+evaluation:
+  metrics:
+    - "accuracy"
+    - "precision"
+    - "recall"
+    - "f1-score"
+  cv_folds: 6
+  random_state: 42
+
+deployment:
+  model_name: "churn_analysis_model"
+  model_version: "1.0.0"
+  api_endpoint: "/predict"
+  batch_size: 1000
+
+inference:
+  model_name: "random_forest_model"
+  data_path: "artifacts/data/X_test.csv"
+  sample_size: 100
+  save_path: "artifacts/predictions/predictions.csv"
+  batch_size: 1000
+  return_proba: true
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(levelname)s - %(message)s"
+  file: "pipeline.log"
+
+mlflow:
+  tracking_uri: "file:./mlruns"
+  experiment_name: "Churn Analysis Using PySpark"
+  model_registry_name: "churn_prediction"
+  artifact_path: "model"
+  run_name_prefix: "churn_run"
+  tags: 
+    project: "churn_analysis"
+    team: "ml engineering"
+    environment: "development"
+  autologs:
+
+
+environment:
+  experiment_name: "churn_analysis"
+
+pipeline:
+  data_pipeline_name: "data_processing_pipeline"
+  training_pipeline_name: "model_training_pipeline"
+  deployment_pipeline_name: "model_deployment_pipeline"
+  inference_pipeline_name: "inference_pipeline"
+  enable_cache: false

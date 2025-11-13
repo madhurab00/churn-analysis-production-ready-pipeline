@@ -1,0 +1,7 @@
+artifact_location: file:///media/madhura/New Volume/zuucrew/mini_project_00/Production
+  ready pipeline/pyspark/mlruns/0
+creation_time: 1761061334144
+experiment_id: '0'
+last_update_time: 1761061334144
+lifecycle_stage: active
+name: Default

@@ -1,0 +1,15 @@
+artifact_uri: file:///media/madhura/New Volume/zuucrew/mini_project_00/Production
+  ready pipeline/pyspark/mlruns/100490761865804508/d9e223f4e0b54912b3c8f9f179e100f5/artifacts
+end_time: 1761487336970
+entry_point_name: ''
+experiment_id: '100490761865804508'
+lifecycle_stage: active
+run_id: d9e223f4e0b54912b3c8f9f179e100f5
+run_name: streaming inference | 2025-10-26 19:32:09
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761487330679
+status: 3
+tags: []
+user_id: madhura
