@@ -1,0 +1,14 @@
+# Runtime, Kafka logs
+runtime/
+
+# Artifacts & models
+artifacts/data/
+artifacts/models/
+artifacts/mlflow_run_artifacts/
+mlruns/
+
+# Python cache & logs
+*.pyc
+__pycache__/
+*.log
+
