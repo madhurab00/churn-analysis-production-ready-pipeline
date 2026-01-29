@@ -9,10 +9,6 @@ A complete ML system with enhanced MLflow tracking that provides:
 - **Rich Artifact Management**
 - **Production-Ready Monitoring**
 - **Complete Reproducibility**
-## 📁 Project Structure
-
-```
-## 🎯 Project Overview
 
 This repository implements a **production-ready machine learning pipeline** for customer churn prediction with comprehensive MLOps practices. The project demonstrates enterprise-grade ML engineering with:
 
