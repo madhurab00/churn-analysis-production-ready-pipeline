@@ -394,7 +394,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Authors
 
-- **Madhura Edirisooriya** - Initial work - [GitHub](https://github.com/madhurabe00)
+- **Madhura Edirisooriya** - Initial work - [GitHub](https://github.com/madhurab00)
 
 ---
 
